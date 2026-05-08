@@ -1,4 +1,28 @@
+import { useEffect } from "react";
 const About = () => {
+  
+
+useEffect(() => {
+  const section = document.querySelector(".section");
+
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      }
+       else {
+        entry.target.classList.remove("show"); // 🔥 reset for repeat
+      }
+    },
+    {
+      threshold: 0.3,
+    }
+  );
+
+  if (section) observer.observe(section);
+
+  return () => observer.disconnect();
+}, []);
   return (
     
 <div className="hero-container">

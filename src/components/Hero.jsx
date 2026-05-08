@@ -3,7 +3,9 @@ const Hero = () => {
     <div id = "hero">
       <div className="hero">
 
-      
+      <div className="overlay">
+        Hello! I AM <span>Saher Fatima</span>
+      </div>
       
       <div className="hero-image">
         <img src="/girly.png" alt="profile" />
@@ -11,9 +13,7 @@ const Hero = () => {
           
 
         {/* OVERLAY TEXT */}
-        <div className="overlay">
-          Hello! I AM <span>Saher Fatima</span>
-        </div>
+        
       </div>
         
 

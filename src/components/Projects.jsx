@@ -1,6 +1,26 @@
 import ProjectCard from "./ProjectCard";
-
+import { useEffect } from "react";
 const Projects = () => {
+  useEffect(() => {
+    const el = document.querySelector(".project-card");
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        } else {
+          entry.target.classList.remove("show"); // 🔥 repeat
+        }
+      },
+      {
+        threshold: 0.3,
+      }
+    );
+
+    if (el) observer.observe(el);
+
+    return () => observer.disconnect();
+  }, []);
   return (
     <div id = "project">
     <div className="project-card">
