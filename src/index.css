@@ -1,4 +1,217 @@
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
 
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes floatGlow {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+
+  100% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+}
+/* body animtaion ends */
+
+/* navbar animation start */
+/* 🔥 jumping + zoom effect */
+@keyframes logoJumpZoom {
+  0%, 100% {
+    transform: scale(1) translateY(0);
+  }
+
+  25% {
+    transform: scale(1.1) translateY(-0.3rem);
+  }
+
+  50% {
+    transform: scale(1) translateY(0);
+  }
+
+  75% {
+    transform: scale(1.08) translateY(-0.2rem);
+  }
+}
+
+/* image same effect */
+@keyframes iconJumpZoom {
+  0%, 100% {
+    transform: scale(1) translateY(0);
+  }
+
+  25% {
+    transform: scale(1.15) translateY(-0.2rem);
+  }
+
+  50% {
+    transform: scale(1) translateY(0);
+  }
+
+  75% {
+    transform: scale(1.1) translateY(-0.15rem);
+  }
+}
+/* ✨ animation move */
+@keyframes navbarShine {
+  0% {
+    left: -60%;
+  }
+  50% {
+    left: 120%;
+  }
+  100% {
+    left: 120%;
+  }
+}
+/* navbar animation ends*/
+
+/* hero animation start */
+@keyframes heroDrop {
+  0% {
+    transform: translateY(-60px);
+    opacity: 0.4;
+  }
+
+  60% {
+    transform: translateY(15px);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+/* ✨ stronger visible shine movement */
+@keyframes shineText {
+  0% {
+    background-position: 200% center;
+  }
+
+  100% {
+    background-position: -200% center;
+  }
+}
+/* 🔥 ANIMATION KEYFRAME */
+@keyframes textUp {
+  0% {
+    opacity: 0;
+    transform: translateY(2rem);
+    filter: blur(6px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+/* 🔥 front ↔ back plate flip */
+@keyframes flipFrontBack {
+  0% {
+    transform: rotateY(0deg);
+  }
+
+  50% {
+    transform: rotateY(180deg); /* 🔥 back side */
+  }
+
+  100% {
+    transform: rotateY(0deg);   /* 🔥 front again */
+  }
+}
+@keyframes overlayShine {
+  0%, 100% {
+    opacity: 0.8;
+    box-shadow:
+      0 0 15px rgba(180, 120, 255, 0.3),
+      0 0 30px rgba(255, 255, 255, 0.1);
+  }
+
+  50% {
+    opacity: 1;
+    box-shadow:
+      0 0 25px rgba(180, 120, 255, 0.7),
+      0 0 50px rgba(255, 255, 255, 0.3);
+  }
+}
+/* hero animation ends */
+/* about animation start */
+@keyframes strongFloat3D {
+  0% {
+    transform: perspective(1000px) rotateY(0deg) translateY(0);
+  }
+
+  20% {
+    transform: perspective(1000px) rotateY(15deg) translateX(1rem) translateY(-0.7rem);
+  }
+
+  40% {
+    transform: perspective(1000px) rotateY(0deg) translateY(0);
+  }
+
+  60% {
+    transform: perspective(1000px) rotateY(-15deg) translateX(-1rem) translateY(-0.7rem);
+  }
+
+  80% {
+    transform: perspective(1000px) rotateY(0deg) translateY(0);
+  }
+
+  100% {
+    transform: perspective(1000px) rotateY(0deg) translateY(0);
+  }
+}
+/* about animation ends */
+/* contact animation start */
+@keyframes contactFloat {
+  0% {
+    transform: translateY(0);
+    box-shadow:
+      0 0 1.25rem rgba(204, 167, 249, 0.4);
+  }
+
+  50% {
+    transform: translateY(-0.8rem);
+    box-shadow:
+      0 0 2.5rem rgba(204, 167, 249, 0.7),
+      0 0 4rem rgba(255, 255, 255, 0.2);
+  }
+
+  100% {
+    transform: translateY(0);
+    box-shadow:
+      0 0 1.25rem rgba(204, 167, 249, 0.4);
+  }
+}
+@keyframes floatArrow {
+  0% {
+    transform: translateY(-50%) translateX(0);
+    opacity: 0.6;
+  }
+
+  50% {
+    transform: translateY(-50%) translateX(8px);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-50%) translateX(0);
+    opacity: 0.6;
+  }
+}
+/* contact animation ends */
 body {
   margin: 0;
   color: #f9f5f5;
@@ -266,6 +479,43 @@ body::before {
 
   animation: flipFrontBack 4s ease-in-out infinite;
 }
+@media (max-width: 768px) {
+
+  /* 🔥 KEEP ROW SAME */
+  .hero {
+    flex-direction: row;   /* IMPORTANT: no column */
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  /* 🔥 TEXT SMALL + COMPACT */
+  .hero-text {
+    flex: 1;
+    min-width: 0;
+  }
+
+   .hero-text h1 {
+    font-size: 1.15rem;   /* 🔥 thora bara */
+    line-height: 1.25;
+  }
+
+  .hero-text p {
+    font-size: 0.78rem;   /* 🔥 balanced */
+    line-height: 1.25;
+  }
+
+
+  /* 🔥 IMAGE SLIGHTLY BIGGER FEEL */
+  .hero-image {
+    flex: 1;
+    justify-content: flex-end;
+  }
+
+  .hero-image img {
+    width: 80%;
+    max-width: 10rem;
+  }
+}
 
 
 
@@ -278,23 +528,19 @@ body::before {
 
   top: 1.5rem;
   left: 50%;
-  transform: translateX(-50%);
+
+  transform: translateX(-50%); /* 🔥 IMPORTANT */
 
   z-index: 999;
 
   pointer-events: none;
 
-  font-size: clamp(0.8rem, 2vw, 1.1rem);
-
   background: rgba(89, 24, 122, 0.4);
+
   padding: 0.3rem 0.7rem;
+
   border-radius: 0.4rem;
 
-  box-shadow:
-    0 0 20px rgba(180, 120, 255, 0.6),
-    0 0 40px rgba(255, 255, 255, 0.2);
-
-  /* 🔥 ADD THIS */
   animation: overlayShine 2.5s ease-in-out infinite;
 }
 
@@ -303,6 +549,20 @@ body::before {
 .overlay span {
   color: #b47aff;
   font-weight: bold;
+}
+@media (max-width: 768px) {
+
+  .overlay {
+    padding: 0.25rem 0.5rem;   /* 🔥 chhota box */
+    border-radius: 0.3rem;
+     font-size: 0.9rem;
+    top: 2rem;
+    transform: translate(-68%, 0);
+  }
+
+  .overlay span {
+    font-size: 0.8rem; /* slightly visible highlight */
+  }
 }
 
 /* MOBILE */
@@ -633,220 +893,7 @@ body::before {
 
 
 /* body animtaion ends */
-@keyframes gradientMove {
-  0% {
-    background-position: 0% 50%;
-  }
 
-  50% {
-    background-position: 100% 50%;
-  }
-
-  100% {
-    background-position: 0% 50%;
-  }
-}
-@keyframes floatGlow {
-  0% {
-    transform: scale(1);
-    opacity: 0.6;
-  }
-
-  100% {
-    transform: scale(1.1);
-    opacity: 1;
-  }
-}
-/* body animtaion ends */
-
-/* navbar animation start */
-/* 🔥 jumping + zoom effect */
-@keyframes logoJumpZoom {
-  0%, 100% {
-    transform: scale(1) translateY(0);
-  }
-
-  25% {
-    transform: scale(1.1) translateY(-0.3rem);
-  }
-
-  50% {
-    transform: scale(1) translateY(0);
-  }
-
-  75% {
-    transform: scale(1.08) translateY(-0.2rem);
-  }
-}
-
-/* image same effect */
-@keyframes iconJumpZoom {
-  0%, 100% {
-    transform: scale(1) translateY(0);
-  }
-
-  25% {
-    transform: scale(1.15) translateY(-0.2rem);
-  }
-
-  50% {
-    transform: scale(1) translateY(0);
-  }
-
-  75% {
-    transform: scale(1.1) translateY(-0.15rem);
-  }
-}
-/* ✨ animation move */
-@keyframes navbarShine {
-  0% {
-    left: -60%;
-  }
-  50% {
-    left: 120%;
-  }
-  100% {
-    left: 120%;
-  }
-}
-/* navbar animation ends*/
-
-/* hero animation start */
-@keyframes heroDrop {
-  0% {
-    transform: translateY(-60px);
-    opacity: 0.4;
-  }
-
-  60% {
-    transform: translateY(15px);
-    opacity: 1;
-  }
-
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-/* ✨ stronger visible shine movement */
-@keyframes shineText {
-  0% {
-    background-position: 200% center;
-  }
-
-  100% {
-    background-position: -200% center;
-  }
-}
-/* 🔥 ANIMATION KEYFRAME */
-@keyframes textUp {
-  0% {
-    opacity: 0;
-    transform: translateY(2rem);
-    filter: blur(6px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-    filter: blur(0);
-  }
-}
-/* 🔥 front ↔ back plate flip */
-@keyframes flipFrontBack {
-  0% {
-    transform: rotateY(0deg);
-  }
-
-  50% {
-    transform: rotateY(180deg); /* 🔥 back side */
-  }
-
-  100% {
-    transform: rotateY(0deg);   /* 🔥 front again */
-  }
-}
-@keyframes overlayShine {
-  0%, 100% {
-    opacity: 0.8;
-    box-shadow:
-      0 0 15px rgba(180, 120, 255, 0.3),
-      0 0 30px rgba(255, 255, 255, 0.1);
-  }
-
-  50% {
-    opacity: 1;
-    box-shadow:
-      0 0 25px rgba(180, 120, 255, 0.7),
-      0 0 50px rgba(255, 255, 255, 0.3);
-  }
-}
-/* hero animation ends */
-/* about animation start */
-@keyframes strongFloat3D {
-  0% {
-    transform: perspective(1000px) rotateY(0deg) translateY(0);
-  }
-
-  20% {
-    transform: perspective(1000px) rotateY(15deg) translateX(1rem) translateY(-0.7rem);
-  }
-
-  40% {
-    transform: perspective(1000px) rotateY(0deg) translateY(0);
-  }
-
-  60% {
-    transform: perspective(1000px) rotateY(-15deg) translateX(-1rem) translateY(-0.7rem);
-  }
-
-  80% {
-    transform: perspective(1000px) rotateY(0deg) translateY(0);
-  }
-
-  100% {
-    transform: perspective(1000px) rotateY(0deg) translateY(0);
-  }
-}
-/* about animation ends */
-/* contact animation start */
-@keyframes contactFloat {
-  0% {
-    transform: translateY(0);
-    box-shadow:
-      0 0 1.25rem rgba(204, 167, 249, 0.4);
-  }
-
-  50% {
-    transform: translateY(-0.8rem);
-    box-shadow:
-      0 0 2.5rem rgba(204, 167, 249, 0.7),
-      0 0 4rem rgba(255, 255, 255, 0.2);
-  }
-
-  100% {
-    transform: translateY(0);
-    box-shadow:
-      0 0 1.25rem rgba(204, 167, 249, 0.4);
-  }
-}
-@keyframes floatArrow {
-  0% {
-    transform: translateY(-50%) translateX(0);
-    opacity: 0.6;
-  }
-
-  50% {
-    transform: translateY(-50%) translateX(8px);
-    opacity: 1;
-  }
-
-  100% {
-    transform: translateY(-50%) translateX(0);
-    opacity: 0.6;
-  }
-}
-/* contact animation ends */
 
 /* media sections starts */
 @media (max-width: 768px) {
@@ -872,22 +919,8 @@ body::before {
     font-size: 0.8rem;
   }
 }
-@media (max-width: 768px) {
-  .overlay {
-    font-size: 0.9rem;
-    top: 1rem;
 
-    transform: translate(-50%, 0); /* 🔥 no weird offset on mobile */
-  }
-}
-@media (max-width: 768px) {
-  .overlay {
-    font-size: 0.9rem;
-    top: 1rem;
 
-    transform: translate(-50%, 0); /* 🔥 no weird offset on mobile */
-  }
-}
 @media (max-width: 768px) {
 
   .hero {
@@ -919,37 +952,42 @@ body::before {
 
     padding: 0 1rem;
 
-    margin-top: 2rem;
+    margin-top: 1rem;
   }
+  /* TEXT SECTION */
+   .section {
+    width: 45%;
 
-  .section {
-    width: 48%;
+    padding-left: 0.8rem;   /* 🔥 left breathing space */
+    box-sizing: border-box;
   }
 
   .heading {
-    font-size: 2rem;
-
+    font-size: 1.2rem;
     line-height: 1.1;
+    margin-bottom: 0.3rem;
   }
 
   .line {
-    font-size: 0.8rem;
+    font-size: 0.6rem;
+    opacity: 0.7;
   }
 
   .paragraph {
-    font-size: 0.9rem;
+    font-size: 0.58rem;
+    line-height: 1.35;
+    margin-top: 0.2rem;
+  }
 
-    line-height: 1.5;
-
-    margin-top: 0.6rem;
+  /* IMAGE BIGGER FEEL */
+  .right-image {
+    flex: 1.6;   /* 🔥 more space to image */
   }
 
   .right-image img {
-    width: 100%;
-    max-width: 16rem;
-  }
-  .right-image {
-    flex: 1.3;   /* 👈 image ko more space */
+    width: 100%;          /* 🔥 actual image */
+    max-width: 11rem;     /* control size */
+    height: auto;
   }
 }
 @media (max-width: 768px) {
@@ -957,7 +995,7 @@ body::before {
   .project-card {
     display: flex;
 
-    flex-wrap: nowrap;   /* 👈 IMPORTANT */
+    flex-wrap: nowrap;
 
     flex-direction: row;
 
@@ -965,17 +1003,15 @@ body::before {
 
     justify-content: space-between;
 
-    gap: 0.8rem;
+    gap: 0.5rem;
 
     width: 100%;
+    margin-top: 4rem;
   }
 
+  /* 🔥 IMAGE SIDE BIGGER */
   .project-left {
-    flex: 0.9;
-
-    padding-left: 0;
-
-    margin-left: 0;
+    flex: 1.3;
 
     min-width: 0;
   }
@@ -983,37 +1019,97 @@ body::before {
   .project-left img {
     width: 100%;
 
-    max-width: 11rem;
+    max-width: 12rem;   /* 🔥 bigger image */
 
-    height: auto;
+    height: 6rem;
   }
 
+  /* 🔥 TEXT SIDE SMALLER */
   .project-right {
-    flex: 1;
+    flex: 0.8;
 
     min-width: 0;
 
-    padding-left: 0.5rem;
+    padding-left: 0.3rem;
   }
 
   .project-right h2 {
-    font-size: 1.5rem;
+    font-size: 1rem;
+
+    line-height: 1.1;
+
+    margin-bottom: 0.2rem;
   }
 
   .project-right h3 {
-    font-size: 0.95rem;
+    font-size: 0.7rem;
+
+    margin-bottom: 0.2rem;
   }
 
   .project-right p {
-    font-size: 0.8rem;
+    font-size: 0.52rem;
 
-    line-height: 1.4;
+    line-height: 1.25;
   }
+  .project-right button {
+    padding: 0.28rem 0.5rem;
+
+    font-size: 0.55rem;
+
+    border-radius: 0.3rem;
+  }
+  /* CONTACT BOX */
+  #contact {
+    width: 90%;
+    max-width: 20rem;
+
+    padding: 1rem;
+
+    top: 2rem;
+
+    margin: 3rem auto;
+
+    border-radius: 0.8rem;
+  }
+
+  /* HEADING */
+  #contact h2 {
+    font-size: 1.4rem;
+
+    margin-top: 0.4rem;
+  }
+
+  /* BUTTONS */
+  #contact button {
+    padding: 0.45rem 0.7rem;
+
+    font-size: 0.6rem;
+
+    margin: 0.25rem 0.3rem;
+
+    border-radius: 0.35rem;
+  }
+
+  /* ARROWS */
+  .arrow {
+    font-size: 2.2rem;
+
+    top: 25%;
+
+    transform: translateY(-50%);
+  }
+
+  .arrow.left {
+    left: 0.35rem;
+  }
+
+  .arrow.right {
+    right: 0.35rem;
+  }
+
+  .arrow:hover {
+    transform: translateY(-50%) scale(1.08);
+  }
+
 }
-/* media sections ends */
-
-
-
-
-
-
