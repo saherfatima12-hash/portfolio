@@ -19,7 +19,7 @@ const SKILL_GROUPS = [
     note: "What I use most",
     skills: [
       { name: "HTML5", icon: SiHtml5 },
-      { name: "CSS3", icon: SiCss3 },
+      { name: "CSS3", icon: SiCss },
       { name: "JavaScript", icon: SiJavascript },
       { name: "React", icon: SiReact },
     ],
