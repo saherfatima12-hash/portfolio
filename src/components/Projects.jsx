@@ -1,56 +1,34 @@
 import ProjectCard from "./ProjectCard";
-import { useEffect } from "react";
+import { FiGithub } from "react-icons/fi";
+
 const Projects = () => {
-  useEffect(() => {
-    const el = document.querySelector(".project-card");
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("show");
-        } else {
-          entry.target.classList.remove("show"); // 🔥 repeat
-        }
-      },
-      {
-        threshold: 0.3,
-      }
-    );
-
-    if (el) observer.observe(el);
-
-    return () => observer.disconnect();
-  }, []);
   return (
-    <div id = "project">
-    <div className="project-card">
+    <div id="project" className="projects-section">
+      <span className="section-eyebrow center">My Work</span>
+      <h2 className="section-title center">Other Projects</h2>
 
-  {/* LEFT IMAGE */}
-  <div className="project-left">
-    <img src="/capture.png" alt="project" />
-  </div>
+      <ProjectCard
+        image="/netflix-hero.jpg"
+        title="Netflix Series Cards"
+        description="A React-based UI project that renders Netflix-style series cards dynamically from JSON data, with a details modal for each title."
+        features={[
+          "Dynamic rendering with React components, props, and .map()",
+          "State management for interactive UI (favourites, cart, detail view)",
+          "Reusable, componentized card layout",
+        ]}
+        tech={["React", "JavaScript", "CSS"]}
+        liveUrl="https://netflix-series-app-alpha.vercel.app/"
+        githubUrl="https://github.com/saherfatima12-hash/netflix-series-app"
+      />
 
-  {/* RIGHT SIDE */}
-  <div className="project-right">
-
-    <h2 className="project-title">Project</h2>
-
-    <h3>Netflix Series Cards</h3>
-
-    <p>
-     A React-based Netflix Series Cards UI project where I used JSON data to dynamically render series cards. The project is built using React components, props, and map() method for rendering lists. State management is used for handling UI interactions, making the interface dynamic and reusable.
-    </p>
-    <a
-  href="https://github.com/saherfatima12-hash/netflix-series-app"
-  target="_blank"
->
-  <button>View Project</button>
-</a>
-
-  </div>
-
-</div>
-</div>
+      <ProjectCard
+        title="Landing Page"
+        description="A responsive landing page built to practice UI implementation, layout structure, and responsive web design fundamentals in React."
+        tech={["React", "CSS"]}
+        githubUrl="https://github.com/saherfatima12-hash/landingpage"
+        reverse
+      />
+    </div>
   );
 };
 
