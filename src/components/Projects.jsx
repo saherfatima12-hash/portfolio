@@ -8,7 +8,7 @@ const Projects = () => {
       <h2 className="section-title center">Other Projects</h2>
 
       <ProjectCard
-        image="/netflix-hero.jpg"
+        image="/netflix-modal.jpg"
         title="Netflix Series Cards"
         description="A React-based UI project that renders Netflix-style series cards dynamically from JSON data, with a details modal for each title."
         features={[

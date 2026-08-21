@@ -30,7 +30,10 @@ const ProjectCard = ({
           />
         ) : (
           <div className="project-image-placeholder">
-            <span>Screenshot coming soon</span>
+            <img
+    src="/netflix-hero.jpg"
+    alt="Netflix Series App"
+  />
           </div>
         )}
       </div>
